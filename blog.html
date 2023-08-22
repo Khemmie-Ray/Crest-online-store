@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>E store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100 font-montserrat text-[1rem]">
+    <!-- ======= Desktop Header ======= -->
+
+    <header class="lg:flex bg-white h-[15vh] items-center justify-between px-12 fixed w-[100%] py-6 hidden">
+        <p class=" text-3xl text-green-800" id="logo">Crest</p>
+        <nav>
+            <ul class="flex items-center lg:w-[50%]">
+            <li><a href="index.html" class="mr-8 hover:border-b-4 hover:border-green-800">Home</a></li>
+            <li><a href="shop.html" class="mr-8 hover:border-b-4 hover:border-green-800">Shop</a></li>
+            <li><a href="blog.html" class="mr-8 hover:border-b-4 hover:border-green-800">Blog</a></li>
+            <li><a href="about.html" class="mr-8 hover:border-b-4 hover:border-green-800">About</a></li>
+            <li><a href="contact.html" class="mr-8 hover:border-b-4 hover:border-green-800">Contact</a></li>
+            <li><a href="cart.html" class="text-[2rem]"><i class="ri-shopping-cart-2-fill"></i></a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <!-- ======= Mobile header =========  -->
+
+    <header class="lg:hidden block">
+        <nav class="bg-green-800 opacity-[0.8] px-6 rounded-full text-white flex items-center w-[100%] text-[2rem] justify-between py-2 fixed bottom-[20px] left-0">
+            <a href="index.html"><i class="ri-home-6-fill"></i></a>
+            <a href="shop.html"><i class="ri-shopping-bag-fill"></i></a>
+            <a href="blog.html"><i class="ri-edit-box-fill"></i></a>
+            <a href="about.html"><i class="ri-profile-fill"></i></a>
+            <a href="contact.html"><i class="ri-contacts-book-2-fill"></i></a>
+            <a href="cart.html" class="text-[2rem]"><i class="ri-shopping-cart-2-fill"></i></a>
+        </nav>
+    </header>
+    <main>
+        <p class="pl-6 my-4 text-3xl text-green-800 lg:hidden" id="logo">Crest</p>
+        <section class="object-cover object-center h-[40vh] w-[100%] flex flex-col items-center bg-gray-800 bg-blend-overlay justify-center text-white lg:pl-6 p-4" style="background-image: url('https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym9vayUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')">
+            <h3 class="lg:text-[2.5rem] text-[2rem] font-[700]">#read<span class="text-red-400">more</span></h3>
+            <p class="text-center">Read and learn more about our diverse products.</p>
+        </section>
+        <section class="w-[90%] lg:w-[80%] mx-auto my-12 ">
+            <div class="flex lg:flex-row flex-col justify-between mb-16">
+                <div class="relative w-[100%] lg:w-[50%] z-10">
+                    <img src="https://images.unsplash.com/photo-1607112622249-b769ce8fab5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="" class="w-[100%] object-cover object-top h-[300px] lg:h-[500px]">
+                    <p class="absolute top-[-50px] left-0 lg:left-48 lg:text-[5rem] text-[3.5rem] font-[700] text-gray-400">14/03</p>
+                </div>
+                <div class="self-center w-[100%] lg:w-[45%] p-4">
+                    <h3 class="font-[700] lg:text-[2.3rem] text-[2rem]">How to style a scarf</h3>
+                    <p class="my-4">Scarves are versatile fashion accessories that can instantly elevate your outfit and add a touch of elegance to your ensemble. Whether it's a chilly day or you're aiming to make a fashion statement, styling a scarf can make all the difference. From...</p>
+                    <a href="#" class="uppercase font-[700]">continue reading &rarr;</a>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col justify-between mb-16">
+                <div class="relative w-[100%] lg:w-[50%] z-10">
+                    <img src="https://img.freepik.com/free-photo/beautiful-afro-american-woman_144627-13084.jpg?size=626&ext=jpg&ga=GA1.2.1207199826.1690666781&semt=ais" alt="" class="w-[100%] object-cover object-top h-[300px] lg:h-[500px]">
+                    <p class="absolute top-[-50px] left-0 lg:left-48 lg:text-[5rem] text-[3.5rem] font-[700] text-gray-400">12/01</p>
+                </div>
+                <div class="self-center w-[100%] lg:w-[45%] p-4">
+                    <h3 class="font-[700] lg:text-[2.3rem] text-[2rem]">Makeup: the good, bad and ugly.</h3>
+                    <p class="my-4">Makeup, a timeless tool of self-expression, has the remarkable power to enhance natural beauty and boost confidence. However, like any art form, it comes with its nuances – the good, the bad, and the ugly. Let's delve into the different facets...</p>
+                    <a href="#" class="uppercase font-[700]">continue reading &rarr;</a>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col justify-between mb-16">
+                <div class="relative w-[100%] lg:w-[50%] z-10">
+                    <img src="https://img.freepik.com/free-photo/portrait-young-woman-smiling-isolated_23-2149158571.jpg?size=626&ext=jpg&ga=GA1.2.1207199826.1690666781&semt=ais" alt="" class="w-[100%] object-cover object-top h-[300px] lg:h-[500px]">
+                    <p class="absolute top-[-50px] left-0 lg:left-48 lg:text-[5rem] text-[3.5rem] font-[700] text-gray-400">25/11</p>
+                </div>
+                <div class="self-center w-[100%] lg:w-[45%] p-4">
+                    <h3 class="font-[700] lg:text-[2.3rem] text-[2rem]">Bowler Hats: A Timeless Icon of Style and Elegance.</h3>
+                    <p class="my-4">n the realm of fashion, few accessories boast the enduring charm and distinctive allure of the bowler hat. This iconic headpiece has transcended time, evolving from its humble beginnings to become a symbol of both class and quirkiness. As we ...</p>
+                    <a href="#" class="uppercase font-[700]">continue reading &rarr;</a>
+                </div>
+            </div>
+        </section>
+                
+    </main>
+    <footer>
+        <section class="bg-[#001F3F] text-white px-8 mt-8 flex flex-col lg:flex-row items-center justify-evenly lg:h-[25vh] h-[35vh]">
+            <div class="lg:w-[55%] md:w-[40%] w-[100%]">
+            <h3 class="capitalize font-[700] text-[1.6rem]">sign up for newsletter</h3>
+            <p>Get E-mail updates about our latest shop and <span class="text-yellow-400 font-[700]">special offers</span></p>
+            </div>
+            <div class="lg:w-[40%] md:w-[40%] w-[100%]">
+                <input type="text" placeholder="Your email address" class="p-2 lg:w-[59%] w-[50%] lg:rounded-tl-md lg:rounded-bl-md ml-0">
+                <button class="capitalize bg-green-800 text-white font-[700] p-2 w-[40%] lg:rounded-tr-md lg:rounded-br-md">sign up</button>
+            </div>
+        </section>
+        <section class="flex flex-col lg:flex-row w-[90%] mx-auto justify-between p-8 lg:h-[40vh] h-auto">
+            <div class="lg:w-[28%] w-[100%]">
+            <p class=" text-[1.4rem] text-green-800" id="logo">Crest</p>
+                <p class="font-[700] lg:mb-4 my-4">Contact Us</p>
+                <p><strong>Address: </strong>562, Wellington road, street 32, san francisco</p>
+                <p><strong>Phone: </strong>01 222245/(+435) 78361</p>
+                <p><strong>Hours: </strong>10:00 -18:00 Mon-Sat</p>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between lg:w-[40%] w-[100%]">
+                <div class="flex flex-col w-[100%] lg:w-[45%]">
+                    <h3 class="font-[700] lg:mb-4 my-4">About</h3>
+                    <a href="" class="mb-2 capitalize">about us</a>
+                    <a href="" class="mb-2 capitalize">delivery information</a>
+                    <a href="" class="mb-2 capitalize">privacy policy</a>
+                    <a href="" class="mb-2 capitalize">terms & conditions</a>
+                    <a href="" class="capitalize">contact us</a>
+                </div>
+                <div class="flex flex-col w-[100%] lg:w-[45%]">
+                    <h3 class="font-[700] lg:mb-4 my-4">My Account</h3>
+                    <a href="" class="mb-2 capitalize">sign in</a>
+                    <a href="" class="mb-2 capitalize">view cart</a>
+                    <a href="" class="mb-2 capitalize">my waitlist</a>
+                    <a href="" class="mb-2 capitalize">track my order</a>
+                    <a href="" class="capitalize">help</a>
+                </div>
+            </div>
+            <div class="lg:w-[28%] w-[100%]">
+                <h3 class="font-[700] lg:mb-4 my-4">Install App</h3>
+                <p class="capitalize">from app store or google play</p>
+                <button class="border border-green-600 block text-[.9rem] py-2 px-6 my-4"><i class="ri-apple-fill text-green-800 text-2xl"></i>Download on the <strong>App Store</strong></button>
+                <button class="border border-green-600 block text-[.9rem] py-2 px-6 mb-2"><i class="ri-google-play-fill text-green-800 text-2xl vertical-middle"></i> Google Play</button>
+                <p>Secured Payment Gateways</p>
+                <div class="flex text-[2rem]">
+                    <i class="ri-visa-line text-blue-400 mr-4"></i>
+                    <i class="ri-mastercard-fill text-red-300"></i>
+                </div>
+            </div>
+        </section>
+        <p class="text-center">&copy;Khemmie-Ray- HTML/CSS E-commerce Template</p>
+    </footer>
+</body>
+</html>
