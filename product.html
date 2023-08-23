@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>E store</title>
+    <title>Crest E-store</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js" defer></script>
@@ -16,11 +16,11 @@
         <p class=" text-3xl text-green-800" id="logo">Crest</p>
         <nav>
             <ul class="flex items-center lg:w-[50%]">
-            <li><a href="index.html" class="mr-8 pb-12 hover:border-b-4 hover:border-green-800">Home</a></li>
-            <li><a href="shop.html" class="mr-8 pb-12 hover:border-b-4 hover:border-green-800">Shop</a></li>
-            <li><a href="blog.html" class="mr-8 pb-12 hover:border-b-4 hover:border-green-800">Blog</a></li>
-            <li><a href="about.html" class="mr-8 pb-12 hover:border-b-4 hover:border-green-800">About</a></li>
-            <li><a href="contact.html" class="mr-8 pb-12 hover:border-b-4 hover:border-green-800">Contact</a></li>
+            <li><a href="index.html" class="mr-8 hover:border-b-4 hover:border-green-800">Home</a></li>
+            <li><a href="shop.html" class="mr-8 hover:border-b-4 hover:border-green-800">Shop</a></li>
+            <li><a href="blog.html" class="mr-8 hover:border-b-4 hover:border-green-800">Blog</a></li>
+            <li><a href="about.html" class="mr-8 hover:border-b-4 hover:border-green-800">About</a></li>
+            <li><a href="contact.html" class="mr-8 hover:border-b-4 hover:border-green-800">Contact</a></li>
             <li><a href="cart.html" class="text-[2rem]"><i class="ri-shopping-cart-2-fill"></i></a></li>
         </ul>
         </nav>
@@ -39,8 +39,23 @@
         </nav>
     </header>
     <main>
-      
-                
+        <p class="pl-6 my-4 text-3xl text-green-800 lg:hidden" id="logo">Crest</p>
+        <section class="object-cover object-center h-[40vh] w-[100%] flex flex-col items-center bg-gray-800 bg-blend-overlay justify-center text-white lg:pl-6 p-4" style="background-image: url('https://img.freepik.com/free-vector/fashion-clothes-accessories-seamless-pattern_1284-3636.jpg?size=626&ext=jpg&ga=GA1.2.1207199826.1690666781&semt=ais')">
+            <h3 class="lg:text-[2.5rem] text-[2rem] font-[700]">#product<span class="text-red-400">page</span></h3>
+            <p class="text-center">Save more with coupons & enjoy up to 70% off</p>
+        </section>
+      <section class="product-container w-[90%] lg:w-[80%] mx-auto my-12 flex lg:flex-row flex-col bg-white rounded-md justify-between p-12">
+            <div class="product-img w-[100%] lg:w-[55%]">
+                <img src="" alt="" class="cartImg w-[100%] object-cover object-top h-[500px]" />
+            </div>
+            <div class="w-[100%] lg:w-[40%]">
+                <h4 class="product-name font-[700] text-[1.5rem]"></h4>
+                <p class="product-price font-[700] text-[1.5rem] text-green-800 my-4"></p>
+                <p class="product-description break-words"></p>
+                <button class="add-button bg-green-800 w-[50%] px-4 py-2 my-4 text-white"><i class="ri-shopping-cart-2-fill text-[2rem]"></i></button>
+                <p class="added-to-cart"></p>
+            </div>   
+      </section>
     </main>
     <footer>
         <section class="bg-[#001F3F] text-white px-8 mt-8 flex flex-col lg:flex-row items-center justify-evenly lg:h-[25vh] h-[35vh]">
@@ -93,5 +108,49 @@
         </section>
         <p class="text-center">&copy;Khemmie-Ray- HTML/CSS E-commerce Template</p>
     </footer>
+<script>
+   const selectedProductData = JSON.parse(localStorage.getItem("productData"));
+   console.log(selectedProductData)
+        const addedToCartMessage = document.querySelector(".added-to-cart");
+        addedToCartMessage.style.display = "none";
+        const productName = document.querySelector(".product-name");
+        productName.textContent = selectedProductData.title;
+        const productImg = document.querySelector(".product-img img");
+        productImg.src = selectedProductData.image;
+        const productDescription = document.querySelector(".product-description");
+        productDescription.textContent = "Description: " + selectedProductData.description;
+        const productPrice = document.querySelector(".product-price");
+        productPrice.textContent = "$" + selectedProductData.price;
+        const cartDiv = document.querySelector(".cart-items");
+        const addToCartBtn = document.querySelector(".add-button");
+        const cart = [];
+
+        addToCartBtn.addEventListener("click", addToCart);
+
+        function message(message) {
+            addedToCartMessage.style.display = "block";
+            addedToCartMessage.textContent = message;
+            setTimeout(() => (addedToCartMessage.style.display = "none"), 2000);
+        }
+
+        function addToCart() {
+            let localCart = JSON.parse(localStorage.getItem("cart"));
+            if (!localCart) {
+                cart.push(selectedProductData);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                message("Added to cart");
+            } else {
+                let isPresent = localCart.some((item) => item.id === selectedProductData.id);
+                if (isPresent) {
+                message("Product already in cart");
+                return;
+                }
+                localCart.push(product);
+                localStorage.setItem("cart", JSON.stringify(localCart));
+                message("Added to cart");
+            }
+        }
+
+</script>
 </body>
 </html>

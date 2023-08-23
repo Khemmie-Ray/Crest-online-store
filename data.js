@@ -4,7 +4,9 @@ let currentPage = 1;
 let allProductsData = []
 
 function fetchAllProducts(page) {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.com/products', {
+        cache: "force-cache"
+    })
     .then(res=>res.json())
     .then(data => {
         console.log(data)
