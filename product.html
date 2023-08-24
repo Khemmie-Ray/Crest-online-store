@@ -145,7 +145,7 @@
                 message("Product already in cart");
                 return;
                 }
-                localCart.push(product);
+                localCart.push(selectedProductData);
                 localStorage.setItem("cart", JSON.stringify(localCart));
                 message("Added to cart");
             }

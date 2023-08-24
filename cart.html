@@ -44,12 +44,16 @@
             <h3 class="lg:text-[2.5rem] text-[2rem] font-[700]">#cart<span class="text-red-400">items</span></h3>
             <p class="text-center">Save more with coupons & enjoy up to 70% off</p>
         </section>
-        <section id="cart-items">
-            
+        <section class="w-[90%] lg:w-[80%] mx-auto">
+                <div class="" id="cart-items">
+                </div>
+                <div class="paymentEl">
+                <button class="paymentBtn">Make payment</button>
+              </div>
         </section>   
         <section class="my-8">
-            <h2 class="text-center lg:text-[2.5rem] text-[2rem] text-green-800 font-[700]">Featured Products</h2>
-            <p class="text-center capitalize">Summer collection. new modern design.</p>
+            <h2 class="text-center lg:text-[2.5rem] text-[2rem] text-green-800 font-[700]">Winters Sales <span class="text-[1rem] text-yellow-800">coming soon</span></h2>
+            <p class="text-center capitalize">Winter collection. new modern design.</p>
             <div id="cart-featured" class="flex lg:flex-row flex-col lg:w-[80%] w-[90%] mx-auto my-8 lg:flex-wrap justify-between items-center">  
             </div>
         </section>        
@@ -105,5 +109,43 @@
         </section>
         <p class="text-center">&copy;Khemmie-Ray- HTML/CSS E-commerce Template</p>
     </footer>
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem("cart"));
+        const cartDiv = document.getElementById("cart-items");
+        console.log(cartItems)
+
+        cartDiv.innerHTML = cartItems.map(displayCart).join("")
+
+        function displayCart(item) {
+            let itemCard = `<div data-num=${item.id} class="mx-auto flex flex-col lg:flex-row items-center justify-between my-8 bg-white rounded-[13px] p-6">
+                <div class="w-[100%] lg:w-[55%]">
+              <img src=${item.image} alt="" class="w-[100%] h-[400px] lg:[180px] object-cover object-top"/>
+              </div>
+              <div class="w-[100%] lg:w-[40%]">
+              <h4 class="font-[700] my-4 text-[1.5rem]">${item.title}</h4>
+              <p>${item.description}</p>
+              <h5 class="my-4 text-green-800 font-[700] text-[1.2rem]">$${item.price}</h5>
+              <button onclick="removeFromCart(event)" class="bg-green-800 text-white text-[1.5rem] py-2 px-6"><i class="ri-delete-bin-6-fill"></i></button>
+              </div>
+              <hr>
+            </div>`
+
+            return itemCard;
+
+            console.log(data-num)
+
+        }
+                
+          function removeFromCart(e) {
+            const localCart = JSON.parse(localStorage.getItem("cart"));
+            // const id =  e.currentTarget.parentNode.getAttribute("data-id");
+            const itemsId = e.currentTarget.parentNode.getAttribute('data-num');
+            console.log(itemsId)
+            const newCart = localCart.filter((item) => item.id !== id);
+            localStorage.setItem("cart", JSON.stringify(newCart));
+            window.location.reload();
+          }
+    
+        </script>
 </body>
 </html>
