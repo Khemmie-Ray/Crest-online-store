@@ -47,14 +47,24 @@
         <section class="w-[90%] lg:w-[80%] mx-auto">
                 <div class="" id="cart-items">
                 </div>
-                <div class="paymentEl">
-                <button class="paymentBtn">Make payment</button>
+                <div class="flex items-center justify-center flex-col">
+                <button class="bg-green-800 hover:bg-green-500 text-white py-4 w-[100%] lg:w-[40%] font-[700] text-[1.1rem]" id="payment-btn">Make Payment</button>
+                <p class="payment-message mt-4 text-[1.1rem] hidden">Payment features still ongoing</p>
               </div>
         </section>   
         <section class="my-8">
             <h2 class="text-center lg:text-[2.5rem] text-[2rem] text-green-800 font-[700]">Winters Sales <span class="text-[1rem] text-yellow-800">coming soon</span></h2>
             <p class="text-center capitalize">Winter collection. new modern design.</p>
-            <div id="cart-featured" class="flex lg:flex-row flex-col lg:w-[80%] w-[90%] mx-auto my-8 lg:flex-wrap justify-between items-center">  
+            <div class="flex lg:flex-row flex-col lg:w-[80%] w-[90%] mx-auto my-8 lg:flex-wrap justify-between items-center">
+                <div class="mb-8 lg:mb-0 bg-white p-4 rounded-md lg:w-[32%] w-[100%]">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQkdnguBl2FIYr6QjFX0CDE7vGR6CYA4gfTg&usqp=CAU" alt="" class="object-cover object-center w-[100%] h-[200px] lg:h-[250px] rounded-md" />          
+                    </div>
+                    <div class="mb-8 lg:mb-0 bg-white p-4 rounded-md lg:w-[32%] w-[100%]">
+                        <img src="https://m.media-amazon.com/images/I/71f8Y5XeIYL._AC_UL1500_.jpg" alt="" class="object-cover object-top w-[100%] h-[200px] lg:h-[250px] rounded-md" />                 
+                        </div>
+                        <div class="mb-8 lg:mb-0 bg-white p-4 rounded-md lg:w-[32%] w-[100%]">
+                            <img src="https://img.freepik.com/free-photo/still-life-rendering-jackets-display_23-2149745028.jpg?size=626&ext=jpg&ga=GA1.1.1207199826.1690666781&semt=ais" alt="" class="object-cover object-center w-[100%] h-[200px] lg:h-[250px] rounded-md" />
+                        </div>
             </div>
         </section>        
     </main>
@@ -112,7 +122,15 @@
     <script>
         const cartItems = JSON.parse(localStorage.getItem("cart"));
         const cartDiv = document.getElementById("cart-items");
-        console.log(cartItems)
+        const paymentBtn = document.querySelector('#payment-btn')
+        const messagePayment = document.querySelector('.payment-message')
+
+        paymentBtn.addEventListener('click', () => {
+            messagePayment.style.display = 'block';
+                setTimeout(() => {
+                    messagePayment.style.display = 'none';
+                }, 3000);
+        })
 
         cartDiv.innerHTML = cartItems.map(displayCart).join("")
 
