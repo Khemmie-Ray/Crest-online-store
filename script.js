@@ -20,7 +20,7 @@ fetch("https://fakestoreapi.com/products/category/jewelery", {
     })
 
     function displayProduct(info) {
-        let card = `<div data-id=${info.id} class="product-card mb-8 lg:mb-0 bg-white p-4 rounded-md lg:w-[22%] w-[100%] lg:h-[380px]">
+        let card = `<div data-id=${info.id} class="product-card mb-8 lg:mb-0 bg-white p-4 rounded-md lg:w-[22%] w-[100%] lg:h-[380px] cursor-pointer">
         <img src=${info.image} alt="" class="object-cover object-center w-[100%] h-[200px] lg:h-[150px] rounded-md" />
         <p class="font-[700] text-[1.2rem] mt-4">${info.title}</p>
         <p class="text-green-800 font-[700]">$${info.price}</p>
@@ -48,7 +48,7 @@ fetch("https://fakestoreapi.com/products/category/jewelery", {
     })
 
     function displayArrivals(info) {
-        let card = `<div class="product-card mb-8 bg-white p-4 rounded-md lg:w-[32%] w-[100%] lg:h-[450px] h-auto" data-id=${info.id}>
+        let card = `<div class="product-card mb-8 bg-white p-4 rounded-md lg:w-[32%] w-[100%] lg:h-[450px] h-auto cursor-pointer" data-id=${info.id}>
         <img src=${info.image} alt="" class="object-cover object-top w-[100%] h-[220px] lg:h-[250px] rounded-md"/>
         <p class="font-[700] text-[1.2rem] mt-4">${info.title}</p>
         <p class="text-green-800 font-[700]">$${info.price}</p>

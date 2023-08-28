@@ -33,7 +33,7 @@ function fetchAndDisplayProducts(page) {
 }
 
 function displayAllProduct(info) {
-    let card = `<div class="product-card mb-8 bg-white p-4 rounded-md lg:w-[32%] w-[100%] lg:h-[450px]" data-id=${info.id}>
+    let card = `<div class="product-card mb-8 bg-white p-4 rounded-md lg:w-[32%] w-[100%] lg:h-[450px] cursor-pointer" data-id=${info.id}>
         <img src=${info.image} alt="" class="object-cover object-top w-[100%] h-[220px] lg:h-[250px] rounded-md"/>
         <p class="font-[700] text-[1.2rem] mt-4">${info.title}</p>
         <p class="text-green-800 font-[700]">$${info.price}</p>
